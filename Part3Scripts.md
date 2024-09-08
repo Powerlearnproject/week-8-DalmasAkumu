@@ -69,6 +69,34 @@ JOIN Regions r ON c.RegionID = r.RegionID
 LEFT JOIN VaccinationRecords vr ON c.ChildID = vr.ChildID AND vr.VaccineID = (SELECT VaccineID FROM Vaccines WHERE VaccineName = 'Polio Vaccine')
 WHERE vr.RecordID IS NULL;
 
+-- Create NewTable With Merged Data 
+CREATE TABLE MergedVaccinationData AS
+SELECT 
+    c.ChildID,
+    c.Name AS ChildName,
+    c.DateOfBirth,
+    c.Gender,
+    r.RegionName,
+    h.Name AS HealthCenterName,
+    h.Location AS HealthCenterLocation,
+    v.VaccineName,
+    v.DiseasePrevented,
+    v.DoseNumber,
+    vr.DateAdministered,
+    hw.Name AS HealthcareWorkerName,
+    hw.Specialization
+FROM 
+    VaccinationRecords vr
+JOIN 
+    Children c ON vr.ChildID = c.ChildID
+JOIN 
+    Vaccines v ON vr.VaccineID = v.VaccineID
+JOIN 
+    HealthCenters h ON vr.HealthCenterID = h.HealthCenterID
+JOIN 
+    Regions r ON c.RegionID = r.RegionID
+LEFT JOIN 
+    HealthcareWorkers hw ON hw.HealthCenterID = h.HealthCenterID;
 
 
 
