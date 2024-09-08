@@ -1,0 +1,4 @@
+Part 1: SDG Selection and Problem Definition
+SDG Selection: SDG 3: Good Health and Well-being.
+
+Problem Definition: Low Child Vaccination Coverage in Turkana, Kenya. In Turkana, Kenya, many children are not receiving essential vaccinations, leaving them vulnerable to preventable diseases. Contributing factors include remote locations, limited access to healthcare services, insufficient vaccine supply, and a lack of awareness about the importance of childhood vaccinations. This project will use data to pinpoint areas within Turkana where child vaccination rates are particularly low and analyze the causes behind these trends. The goal is to help guide healthcare interventions and strategies to improve vaccination rates for children in this region.
